@@ -1,0 +1,116 @@
+ - Allow drag and drop children/parenting (Broken)
+ 
+ - Add Entity
+ - Delete Entity
+ - Duplicate Entity
+
+ - Properties for selected Layer
+ - Key frame layer Properties
+
+ - Show keyframes for selected
+ - Add keyframe for selected
+ - Deleted keyframe for selected
+ - Properties for selected Keyframe
+
+ - Editor Selection
+ - Gizmos
+ - Editor Cam (f to focus on selected)
+ - Pilot demo camera
+ - Key frame demo cameras
+
+NOTES
+=====
+* All Initialization to happen at the start of the demo, this means scrubbing will work without issues.
+
+TODO!
+=====
+ - Material File format (.mat) Shader (filename), Texture2D (filename)
+ - Assets (Meshes, Textures, Materials, Shaders)
+   - Demo needs to load from memory, use and reference.  No changes, no error checking.
+   - Editor needs all the above including grouping, changes, error checking, file path loading, saving.
+ - Create EImage
+ - Create ELight
+ - Create ECamera
+ - Create EShader
+
+ - Load
+ - Save
+
+ - Properties for Material
+ - Properties for Image
+ - Properties for Light
+ - Properties for Camera
+ - Properties for Shader
+
+ - Shadows
+ - PBR Shader
+
+Bugs!
+=====
+Reducing size of curve editor and timeline window crashes application
+Windows 10 display scaling isn't taking into account, the whole editor is too small if display scaling is set bigger than 100% under windows 10
+
+Sprint 2
+========
+Zoom timeline Window
+Scroll timeline Window
+
+Done!
+=====
+GLFW
+Editor Class
+Windows App
+AntTweakBar integrate
+Accept Editor resolution from WinMain, create accessors
+Console write, Scroll, select for copy
+Integrate FMod (?  statically linked?, alternatives?) - Mp3.cpp !! Awesome
+Load music
+Play Demo (Add Toolbar window)
+Switch to Imgui!
+ - Get a test bed (glfw3)
+ - Integrate Imgui (glfw_render_thingo)
+ - Play
+ - now integrate with deframework
+Add timeline Window
+ - draw song time
+ - allow scrubbing
+ - KeyFrameHandle (Type, Position)
+ - KeyFrame (Time, Type, Value, HanldeIn, HandleOut)
+Animation Class
+ - Animations (Object, Property, PropertyType(float/bool/int/double), List of Keyframes)
+ - Implement InsertKeyframe
+ - Implement DeleteKeyframe
+ - Test it out in the editor (Dopesheet -> keymebool, not working - debug)
+ - Debug Linear interpolation!
+ - Cubic Catmull Rom interpolation (with auto handles)
+ShaderProgram Class (from old framework)
+Demoview (Editor)
+Assets
+ - Mp3
+ - Texture
+ - Shaders
+Mesh
+glTF
+ - Use Eigen to setup model, view (camera) and projection matrices *** FAIL *** swap to glm as docs and examples are better
+ - Setup mesh to create VAO from loaded model
+ - Create shader that uses simple diffuse lighting
+ - Render
+ - Layers
+ - Layer Selection
+ - Create Layer
+ - Delete Layer
+ - Order Layer
+ - Properties
+ - Entities - Name, Type, Transform, Active, Children, Parent
+ - Entity Abstract Base Class
+ - Create EMesh
+
+ - Change background colour for keyed values
+ - Serialize keyed values with Text identifier - EntityName.Property
+ - Key scale
+ - Key and Evaluate for Vec3
+ - Key and slerping for Quaternions
+ - Quaternion Squad
+ - Make layer entities selectable
+ - Selected entities show up in the PropertyEditor
+ - Make Entities have parents
