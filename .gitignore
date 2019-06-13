@@ -17,8 +17,10 @@
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-x64/
-x86/
+x64/*
+x86/*
+!Runtime/dep/glfw3.2.1/x86/Debug/*
+!Runtime/dep/glfw3.2.1/x86/Release/*
 bld/
 [Bb]in/
 [Oo]bj/
